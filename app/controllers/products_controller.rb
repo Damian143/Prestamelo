@@ -9,8 +9,11 @@ class ProductsController < ApplicationController
   def create
     @product = Product.new(products_params)
 
-    @product.save
+    if @product.save
     redirect_to @product
+    else
+      render "new"
+    end
   end
 
   def show
