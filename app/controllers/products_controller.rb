@@ -4,6 +4,7 @@ class ProductsController < ApplicationController
     @product = Product.all
   end
   def new
+    @product = Product.new
   end
 
   def create
@@ -13,6 +14,16 @@ class ProductsController < ApplicationController
     redirect_to @product
     else
       render "new"
+    end
+  end
+
+  def update
+    @product = product.find(params[:id])
+
+    if @product.update(product_params)
+      redirect_to @product
+    else
+      render 'edit'
     end
   end
 
