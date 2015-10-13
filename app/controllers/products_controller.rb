@@ -9,6 +9,9 @@ class ProductsController < ApplicationController
     redirect_to @product
   end
 
+  def show
+    @product = Product.find(params[:id])
+  end
 
   private
   def products_params
