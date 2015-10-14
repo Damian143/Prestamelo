@@ -1,4 +1,5 @@
 class ProductsController < ApplicationController
+  before_action :authenticate_user! #, only: [:edit, :update, :destroy]
 
   def index
     @product = Product.all
