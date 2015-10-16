@@ -1,4 +1,4 @@
-<h2>Log in</h2>
+<!-- <h2>Log in</h2>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="field">
@@ -21,6 +21,87 @@
   <div class="actions">
     <%= f.submit "Log in" %>
   </div>
-<% end %>
+<% end %> -->
 
-<%= render "devise/shared/links" %>
+
+
+  <div class="main-container">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-5 login-box">
+          <div class="panel panel-default">
+            <div class="panel-intro text-center">
+              <h2 class="logo-title">
+                <!-- Original Logo will be placed here  -->
+                <span class="logo-icon"><i class="icon icon-search-1 ln-shadow-logo shape-0"></i> </span> BOOT<span>CLASSIFIED </span> </h2>
+            </div>
+            <div class="panel-body">
+              <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { role: "form" }) do |f| %>
+              <!-- <form role="form"> -->
+                <div class="form-group">
+                  <label for="sender-email" class="control-label">Email:</label>
+                  <div class="input-icon"> <i class="icon-user fa"></i>
+                    <%= f.email_field :email, class: "form-control email", id: "sender-email", placeholder: "Email" %>
+                    <!-- <input id="sender-email" type="text"  placeholder="Username" class="form-control email"> -->
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="user-pass"  class="control-label">Password:</label>
+                  <div class="input-icon"> <i class="icon-lock fa"></i>
+                    <%= f.password_field :password, autocomplete: "off", class: "form-control", id: "user-pass", placeholder: "Password"  %>
+                    <!-- <input type="password"  class="form-control" placeholder="Password"  id="user-pass"> -->
+                  </div>
+                </div>
+                <div class="form-group">
+                    <%= f.submit t('.log_in', :default => "Log in"), class: "btn btn-primary btn-block"  %>
+                  <!-- <a  href="account-home.html" class="btn btn-primary  btn-block">Submit</a> -->
+                </div>
+
+              <!-- </form> -->
+            </div>
+            <div class="panel-footer">
+              <label class="checkbox pull-left">
+                <% if devise_mapping.rememberable? -%>
+                    <%= f.check_box :remember_me %>
+                <% end -%>
+                <!-- <input type="checkbox" value="1" name="remember" id="remember"> -->
+                Keep me logged in </label>
+              <p> <%= link_to "Forgot your password?", new_password_path(resource_name), class: "text-center pull-right" %>  </p>
+              <!-- <p class="text-center pull-right"> <a href="forgot-password.html"> Lost your password? </a> </p> -->
+              <div style=" clear:both"></div>
+            </div>
+            <% end %> <!-- form for end -->
+          </div>
+          <div class="login-box-btm text-center">
+            <p> Don't have an account? <br>
+              <strong> <%= link_to "Sign up", new_user_registration_path %> </strong>  </p>
+              <!-- <a href="signup.html"><strong>Sign Up !</strong> </a> </p> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- /.main-container -->
+
+
+  <!-- /.footer -->
+</div>
+<!-- /.wrapper -->
+
+<!-- Le javascript
+================================================== -->
+
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"> </script><script src="assets/bootstrap/js/bootstrap.min.js"></script>
+
+<!-- include carousel slider plugin  -->
+<script src="assets/js/owl.carousel.min.js"></script>
+
+<!-- include form-validation plugin || add this script where you need validation   -->
+<script src="assets/js/form-validation.js"></script>
+
+<!-- include jquery.fs plugin for custom scroller and selecter  -->
+<script src="assets/plugins/jquery.fs.scroller/jquery.fs.scroller.js"></script>
+<script src="assets/plugins/jquery.fs.selecter/jquery.fs.selecter.js"></script>
+<!-- include custom script for site  -->
+<script src="assets/js/script.js"></script>
