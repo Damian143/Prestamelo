@@ -1,4 +1,4 @@
-<h2>Forgot your password?</h2>
+<!-- <h2>Forgot your password?</h2>
 
 <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
   <%= devise_error_messages! %>
@@ -11,6 +11,67 @@
   <div class="actions">
     <%= f.submit "Send me reset password instructions" %>
   </div>
-<% end %>
+<% end %> -->
 
-<%= render "devise/shared/links" %>
+
+<!-- /.header -->
+
+<div class="main-container">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-5 login-box">
+        <div class="panel panel-default">
+          <div class="panel-intro text-center">
+            <h2 class="logo-title">
+              <!-- Original Logo will be placed here  -->
+              <span class="logo-icon"><i class="icon icon-search-1 ln-shadow-logo shape-0"></i> </span> Presta<span>MELO </span> </h2>
+          </div>
+          <div class="panel-body">
+            <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post, role: "form" }) do |f| %>
+              <%= devise_error_messages! %>
+            <!-- <form role="form"> -->
+              <div class="form-group">
+                <label for="sender-email" class="control-label">Email:</label>
+                <div class="input-icon"> <i class="icon-user fa"></i>
+                  <%= f.email_field :email, class: "form-control email", id: "sender-email", placeholder: "Email" %>
+                  <!-- <input id="sender-email" type="text"  placeholder="Email" class="form-control email"> -->
+                </div>
+              </div>
+              <div class="form-group">
+                <%= f.submit t(".sendme_reset_password_instructions",:default => "Sendme reset password instructions"), class: "btn btn-primary btn-lg btn-block"  %>
+                <!-- f.submit t('.log_in', :default => "Log in")
+                <button type="submit" class="btn btn-primary btn-lg btn-block">Send me my password</button> -->
+              </div>
+            <% end %>
+            </form>
+          </div>
+          <div class="panel-footer">
+
+            <p class="text-center "> <%= link_to "Back to log in", new_user_session_path %></p>
+            <div style=" clear:both"></div>
+          </div>
+        </div>
+        <div class="login-box-btm text-center">
+          <p> Don't have an account? <br>
+            <strong> <%= link_to "Sign up", new_user_registration_path %> </strong>  </p>
+            <!-- <a href="signup.html"><strong>Sign Up !</strong> </a> </p> -->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"> </script><script src="assets/bootstrap/js/bootstrap.min.js"></script>
+
+<!-- include carousel slider plugin  -->
+<script src="assets/js/owl.carousel.min.js"></script>
+
+<!-- include form-validation plugin || add this script where you need validation   -->
+<script src="assets/js/form-validation.js"></script>
+
+<!-- include jquery.fs plugin for custom scroller and selecter  -->
+<script src="assets/plugins/jquery.fs.scroller/jquery.fs.scroller.js"></script>
+<script src="assets/plugins/jquery.fs.selecter/jquery.fs.selecter.js"></script>
+<!-- include custom script for site  -->
+<script src="assets/js/script.js"></script>
