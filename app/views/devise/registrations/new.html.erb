@@ -1,0 +1,204 @@
+<!-- <h2>Sign up bitch</h2>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= devise_error_messages! %>
+
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password %>
+    <% if @minimum_password_length %>
+    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <% end %><br />
+    <%= f.password_field :password, autocomplete: "off" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password_confirmation %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "off" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Sign up" %>
+  </div>
+<% end %> -->
+
+<%= render "devise/shared/links" %>
+
+<!DOCTYPE html>
+<%= render "shared/navbar" %>
+
+  <div class="main-container">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 page-content">
+          <div class="inner-box category-content">
+            <h2 class="title-2"> <i class="icon-user-add"></i> Create your account, Its free </h2>
+            <div class="row">
+              <div class="col-sm-12">
+                <%= form_for(resource, as: resource_name, url: registration_path(resource_name) , html: { class: "form-horizontal" }) do |f| %>
+                  <%= devise_error_messages! %>
+
+                  <fieldset>
+                    <!-- <div class="form-group required">
+                      <label class="col-md-4 control-label" >You are a <sup>*</sup></label>
+                      <div class="col-md-6">
+                        <div class="radio">
+                          <label>
+                            <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+                            Professional </label>
+                        </div>
+                        <div class="radio">
+                          <label>
+                            <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+                            Individual </label>
+                        </div>
+                      </div>
+                    </div> -->
+
+                    <!-- Text input-->
+                    <!-- <div class="form-group required">
+                      <label class="col-md-4 control-label" >First Name <sup>*</sup></label>
+                      <div class="col-md-6">
+                        <input  name="" placeholder="First Name" class="form-control input-md" required="" type="text">
+                      </div>
+                    </div> -->
+
+                    <!-- Text input-->
+                    <!-- <div class="form-group required">
+                      <label class="col-md-4 control-label" >Last Name <sup>*</sup></label>
+                      <div class="col-md-6">
+                        <input  name="textinput" placeholder="Last Name" class="form-control input-md" type="text">
+                      </div>
+                    </div> -->
+
+                    <!-- Text input-->
+                    <!-- <div class="form-group required">
+                      <label class="col-md-4 control-label" >Phone Number <sup>*</sup></label>
+                      <div class="col-md-6">
+                        <input  name="textinput" placeholder="Phone Number" class="form-control input-md" type="text">
+                        <div class="checkbox">
+                          <label>
+                            <input type="checkbox" value="">
+                            <small> Hide the phone number on the published ads.</small> </label>
+                        </div>
+                      </div>
+                    </div> -->
+
+                    <!-- Multiple Radios -->
+                    <!-- <div class="form-group">
+                      <label class="col-md-4 control-label" >Gender</label>
+                      <div class="col-md-6">
+                        <div class="radio">
+                          <label for="Gender-0">
+                            <input name="Gender" id="Gender-0" value="1" checked="checked" type="radio">
+                            Male </label>
+                        </div>
+                        <div class="radio">
+                          <label for="Gender-1">
+                            <input name="Gender" id="Gender-1" value="2" type="radio">
+                            Female </label>
+                        </div>
+                      </div>
+                    </div> -->
+
+                    <!-- Textarea -->
+                    <!-- <div class="form-group">
+                      <label class="col-md-4 control-label" for="textarea">About Yourself</label>
+                      <div class="col-md-6">
+                        <textarea class="form-control" id="textarea" name="textarea">About Yourself</textarea>
+                      </div>
+                    </div>   -->
+                    <div class="form-group required">
+                      <label for="inputEmail3" class="col-md-4 control-label">Email <sup>*</sup></label>
+                      <div class="col-md-6">
+                        <!-- #email -->
+                        <%= f.email_field :email, class: "form-control", id: "inputEmail3", placeholder: "Email" %>
+                        <!-- <input type="email" class="form-control" id="inputEmail3" placeholder="Email"> -->
+                      </div>
+                    </div>
+                    <div class="form-group required">
+                      <label for="inputPassword3" class="col-md-4 control-label">Password </label>
+                      <div class="col-md-6">
+
+                        <%= f.password_field :password, autocomplete: "off", class: "form-control", id: "inputPassword3", placeholder: "Password"  %>
+                        <!-- <input type="password" class="form-control" id="inputPassword3" placeholder="Password"> -->
+                        <p class="help-block">
+                          <% if @minimum_password_length %>
+                              <%= @minimum_password_length %> characters minimum
+                          <% end %><br /> <!--Example block-level help text here.-->
+                        </p>
+                      </div>
+                    </div>
+                    <div class="form-group required">
+                      <label for="inputPassword3" class="col-md-4 control-label">Password confirmation </label>
+                      <div class="col-md-6">
+                        <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control", id: "inputPassword3", placeholder: "Password confirmation"  %>
+                        <!-- <input type="password" class="form-control" id="inputPassword3" placeholder="Password"> -->
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label  class="col-md-4 control-label"></label>
+                      <div class="col-md-8">
+                        <!-- <div class="termbox mb10">
+                          <label class="checkbox-inline" for="checkboxes-1">
+                            <input name="checkboxes" id="checkboxes-1" value="1" type="checkbox">
+                            I have read and agree to the <a href="terms-conditions.html">Terms & Conditions</a> </label>
+                        </div>  -->
+                        <div style="clear:both"></div>
+                        <%= f.submit t('.sign_in', :default => "Sign in"), class: "btn btn-primary"  %> </div>
+                        <!-- <a class="btn btn-primary" href="account-home.html">Register</a> </div> -->
+                    </div>
+                  </fieldset>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- /.page-content -->
+
+        <div class="col-md-4 reg-sidebar">
+          <div class="reg-sidebar-inner text-center">
+            <div class="promo-text-box"> <i class=" icon-picture fa fa-4x icon-color-1"></i>
+              <h3><strong>Post a Free Classified</strong></h3>
+              <p> Post your free online classified ads with us. Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+            </div>
+            <div class="promo-text-box"> <i class=" icon-pencil-circled fa fa-4x icon-color-2"></i>
+              <h3><strong>Create and Manage Items</strong></h3>
+              <p> Nam sit amet dui vel orci venenatis ullamcorper eget in lacus.
+                Praesent tristique elit pharetra magna efficitur laoreet.</p>
+            </div>
+            <div class="promo-text-box"> <i class="  icon-heart-2 fa fa-4x icon-color-3"></i>
+              <h3><strong>Create your Favorite  ads list.</strong></h3>
+              <p> PostNullam quis orci ut ipsum mollis malesuada varius eget metus.
+                Nulla aliquet dui sed quam iaculis, ut finibus massa tincidunt.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- /.row -->
+    </div>
+    <!-- /.container -->
+  </div>
+  <!-- /.main-container -->
+<%= render "shared/footer" %>
+</div>
+<!-- /.wrapper --> <!-- Le javascript
+================================================== -->
+
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"> </script><script src="assets/bootstrap/js/bootstrap.min.js"></script>
+
+<!-- include carousel slider plugin  -->
+<script src="assets/js/owl.carousel.min.js"></script>
+
+<!-- include jquery.fs plugin for custom scroller and selecter  -->
+<script src="assets/plugins/jquery.fs.scroller/jquery.fs.scroller.js"></script>
+<script src="assets/plugins/jquery.fs.selecter/jquery.fs.selecter.js"></script>
+<!-- include custom script for site  -->
+<script src="assets/js/script.js"></script>
+</body>
+</html>
