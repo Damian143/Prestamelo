@@ -1,12 +1,16 @@
 Rails.application.routes.draw do
-
+  devise_for :users
   root 'welcome#index'
 
-  devise_for :users, controllers: { omniauth_callbacks: "users/omniauth_callbacks",
+<<<<<<< HEAD
+  devise_for :users, controllers: { 
                                     registrations: "users/registrations",
                                     passwords: "users/passwords",
                                     sessions: "users/sessions"}
 
+=======
+  devise_for :users, controllers: { omniauth_callbacks: "users/omniauth_callbacks"}
+>>>>>>> parent of 6e06872... uid provider to schema omniauth gems
   resources :products
 
   get "index", to: "products#index"
