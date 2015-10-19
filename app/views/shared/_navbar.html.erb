@@ -57,7 +57,8 @@
               <li><%= link_to "Log in", new_user_session_path %></li>
               <li><%= link_to "Sign up", new_user_registration_path %></li>
             <% end %>
-            <li class="postadd"><a class="btn btn-block   btn-border btn-post btn-danger" href="post-ads.html">Post Free Add</a></li>
+            <li class="postadd"> <%= link_to "Post Free Add", new_product_path, html_options = { class: "btn btn-block   btn-border btn-post btn-danger" } %> </li>
+            <!-- <li class="postadd"><a class="btn btn-block   btn-border btn-post btn-danger" href="post-ads.html">Post Free Add</a></li> -->
           </ul>
         </div>
         <!--/.nav-collapse -->
