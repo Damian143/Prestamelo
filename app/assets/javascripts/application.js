@@ -14,3 +14,8 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require bootstrap-sprockets
+//= require js/owl.carousel.min
+//= require js/hideMaxListItem-min
+//= require jquery.fs.scroller.min
+//= require jquery.fs.selecter.min
+//= require js/script

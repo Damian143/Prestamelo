@@ -7,13 +7,13 @@
 	Customs Script
 	responsive cat-collapse for homepage
 	*/
-	
 
-	
+
+
 $(document).ready(function() {
 
     /*==================================
-	 Carousel 
+	 Carousel
 	====================================*/
 
     // Featured Listings  carousel || HOME PAGE
@@ -46,7 +46,7 @@ $(document).ready(function() {
 	 Ajax Tab || CATEGORY PAGE
 	====================================*/
 
-    //  item listing ajaxTabs 
+    //  item listing ajaxTabs
     $('#ajaxTabs a').click(function(e) {
         e.preventDefault();
 
@@ -57,7 +57,7 @@ $(document).ready(function() {
         // ajax load from data-url
         $(href).load(url, function(result) {
             pane.tab('show');
-            // ajax pre-request callback function 
+            // ajax pre-request callback function
             $('.tooltipHere').tooltip();
             $('.grid-view').click(function(e) {
                 $(function() {
@@ -72,7 +72,7 @@ $(document).ready(function() {
     // load first tab content
     $('#allAds').load($('.active a').attr("data-url"), function(result) {
         $('.active a').tab('show');
-        // ajax pre-request callback function 
+        // ajax pre-request callback function
         $('.tooltipHere').tooltip();
 
         $('.grid-view').click(function(e) {
@@ -84,7 +84,7 @@ $(document).ready(function() {
     });
 
     /*==================================
-	 List view clickable || CATEGORY 
+	 List view clickable || CATEGORY
 	====================================*/
 
     // List view , Grid view  and compact view
@@ -141,7 +141,7 @@ $(document).ready(function() {
 
 
     /*==================================
-	Global Plugins || 
+	Global Plugins ||
 	====================================*/
 
     $('.long-list').hideMaxListItems({
@@ -167,19 +167,19 @@ $(document).ready(function() {
 
 
     /*=======================================================================================
-		cat-collapse Hmepage Category Responsive view  
+		cat-collapse Hmepage Category Responsive view
 	========================================================================================*/
-	
-	
+
+
 
     $(window).bind('resize load', function() {
-	
-	
-		
+
+
+
         if ($(this).width() < 767) {
 
         $('.cat-collapse').collapse('hide');
-		
+
             $('.cat-collapse').on('shown.bs.collapse', function() {
                 $(this).prev('.cat-title').find('.icon-down-open-big').addClass("active-panel");
                 //$(this).prev('.cat-title').find('.icon-down-open-big').toggleClass('icon-down-open-big icon-up-open-big');
@@ -190,16 +190,13 @@ $(document).ready(function() {
             })
 
         } else {
-			
+
 		$('.cat-collapse').removeClass('out').addClass('in').css('height', 'auto');
-           
+
         }
-		
+
     });
 
-	
+
 
 }); // end Ready
-
-
-	
