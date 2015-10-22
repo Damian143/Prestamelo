@@ -11,7 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151014200547) do
+ActiveRecord::Schema.define(version: 20151021193209) do
+
+  create_table "categories", force: :cascade do |t|
+    t.string "name"
+  end
+
+  create_table "communes", force: :cascade do |t|
+    t.string  "name"
+    t.integer "region_id"
+  end
+
+  add_index "communes", ["region_id"], name: "index_communes_on_region_id"
 
   create_table "products", force: :cascade do |t|
     t.string   "title"
@@ -19,6 +30,13 @@ ActiveRecord::Schema.define(version: 20151014200547) do
     t.float    "price"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.integer  "user_id"
+  end
+
+  add_index "products", ["user_id"], name: "index_products_on_user_id"
+
+  create_table "regions", force: :cascade do |t|
+    t.string "name"
   end
 
   create_table "users", force: :cascade do |t|
@@ -35,8 +53,6 @@ ActiveRecord::Schema.define(version: 20151014200547) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
-    t.string   "uid"
-    t.string   "provider"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

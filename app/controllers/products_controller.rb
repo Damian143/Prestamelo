@@ -10,7 +10,7 @@ class ProductsController < ApplicationController
   end
 
   def create
-    @product = Product.new(products_params)
+    @product = current_user.products.new(products_params)
 
     if @product.save
     redirect_to @product
@@ -20,7 +20,7 @@ class ProductsController < ApplicationController
   end
 
   def update
-    @product = Product.find(params[:id])
+    @product = current_user.product.find(params[:id])
 
     if @product.update(product_params)
       redirect_to @product
