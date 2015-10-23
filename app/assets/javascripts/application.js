@@ -12,7 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require bxslider
+
 //= require turbolinks
 //= require bootstrap-sprockets
 //= require js/owl.carousel.min

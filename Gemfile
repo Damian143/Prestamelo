@@ -6,7 +6,7 @@ gem 'rails', '4.2.4'
 
 gem "font-awesome-rails"
 
-gem 'bxslider-rails'
+
 
 gem 'dotenv-rails'
 # Use SCSS for stylesheets
