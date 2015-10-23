@@ -11,6 +11,7 @@
  * file per style scope.
 
  *= require_self
+ *= require bxslider
  */
 
  @import "bootstrap-sprockets";
@@ -18,3 +19,4 @@
  @import "css/style";
  @import "css/owl.carousel";
  @import "css/owl.theme";
+ @import "font-awesome";

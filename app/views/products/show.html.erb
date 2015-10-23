@@ -249,20 +249,13 @@
 <!-- Le javascript
 ================================================== -->
 
-<!-- Placed at the end of the document so the pages load faster -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"> </script><script src="assets/bootstrap/js/bootstrap.min.js"></script>
-
-<!-- include carousel slider plugin  -->
-<script src="assets/js/owl.carousel.min.js"></script>
-
 <!-- include equal height plugin  -->
-<script src="assets/js/jquery.matchHeight-min.js"></script>
+<%= javascript_include_tag 'js/jquery.matchHeight-min', 'data-turbolinks-track' => true %>
 
-<!-- include jquery list shorting plugin plugin  -->
-<script src="assets/js/hideMaxListItem.js"></script>
 
 <!-- bxSlider Javascript file -->
 <script src="assets/plugins/bxslider/jquery.bxslider.min.js"></script>
+<%= javascript_include_tag 'js/jquery.bxslider.min', 'data-turbolinks-track' => true %>
 <script>
 $('.bxslider').bxSlider({
   pagerCustom: '#bx-pager'
@@ -272,8 +265,3 @@ $('.bxslider').bxSlider({
 </script>
 <!-- include form-validation plugin || add this script where you need validation   -->
 <script src="assets/js/form-validation.js"></script>
-<!-- include jquery.fs plugin for custom scroller and selecter  -->
-<script src="assets/plugins/jquery.fs.scroller/jquery.fs.scroller.js"></script>
-<script src="assets/plugins/jquery.fs.selecter/jquery.fs.selecter.js"></script>
-<!-- include custom script for site  -->
-<script src="assets/js/script.js"></script>
