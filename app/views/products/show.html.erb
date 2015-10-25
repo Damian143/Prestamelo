@@ -41,11 +41,28 @@
             <div class="ads-image">
               <h1 class="pricetag"> $<%= @product.price %></h1>
               <ul class="bxslider">
-                <li><img src="images/item/tp-big/Image00014.jpg" alt="img" /></li>
-                <li><img src="images/item/tp-big/Image00015.jpg" alt="img" /></li>
-                <li><img src="images/item/tp-big/Image00013.jpg" alt="img" /></li>
+                <li><%= image_tag("item/tp-big/Image00014.jpg") %></li>
+                <!-- <li><img src="images/item/tp-big/Image00014.jpg" alt="img" /></li> -->
+                <li><%= image_tag("item/tp-big/Image00015.jpg") %></li>
+                <!-- <li><img src="images/item/tp-big/Image00015.jpg" alt="img" /></li> -->
+                <li><%= image_tag("item/tp-big/Image00013.jpg") %></li>
+                <!-- <li><img src="images/item/tp-big/Image00013.jpg" alt="img" /></li> -->
               </ul>
-              <div id="bx-pager"> <a class="thumb-item-link" data-slide-index="0" href=""><img src="images/item/tp/Image00014.jpg" alt="img" /></a> <a class="thumb-item-link"  data-slide-index="1" href=""><img src="images/item/tp/Image00015.jpg" alt="img" /></a> <a class="thumb-item-link"  data-slide-index="2" href=""><img src="images/item/tp/Image00013.jpg" alt="img" /></a> </div>
+              <div id="bx-pager">
+
+                <a class="thumb-item-link" data-slide-index="0" href="">
+                  <%= image_tag("item/tp/Image00014.jpg") %>
+                  <!-- <img src="images/item/tp/Image00014.jpg" alt="img" /> -->
+                </a>
+                <a class="thumb-item-link"  data-slide-index="1" href="">
+                  <%= image_tag("item/tp/Image00015.jpg") %>
+                  <!-- <img src="images/item/tp/Image00015.jpg" alt="img" /> -->
+                </a>
+                <a class="thumb-item-link"  data-slide-index="2" href="">
+                  <%= image_tag("item/tp/Image00013.jpg") %>
+                  <!-- <img src="images/item/tp/Image00013.jpg" alt="img" /> -->
+                </a>
+              </div>
             </div>
             <!--ads-image-->
 
@@ -260,8 +277,6 @@
 $('.bxslider').bxSlider({
   pagerCustom: '#bx-pager'
 });
-
-
 </script>
 <!-- include form-validation plugin || add this script where you need validation   -->
 <script src="assets/js/form-validation.js"></script>

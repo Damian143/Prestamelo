@@ -54,6 +54,10 @@ Rails.application.configure do
   # Use a different logger for distributed setups.
   # config.logger = ActiveSupport::TaggedLogging.new(SyslogLogger.new)
 
+  # Precompile additional assets.
+  # application.js, application.css, and all non-JS/CSS in app/assets folder are already added.
+
+
   # Use a different cache store in production.
   # config.cache_store = :mem_cache_store
 
@@ -78,5 +82,5 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   #config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
-  #Devise cambiar la url a la de produccion 
+  #Devise cambiar la url a la de produccion
 end
